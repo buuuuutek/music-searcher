@@ -12,7 +12,7 @@ class MSItunesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Hallo from iTunes Controller")
     }
 
 
