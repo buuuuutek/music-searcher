@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503D223154A200E14D0C /* AppDelegate.swift */; };
-		24FE5040223154A200E14D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503F223154A200E14D0C /* ViewController.swift */; };
+		24FE5040223154A200E14D0C /* MSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503F223154A200E14D0C /* MSMainViewController.swift */; };
 		24FE5043223154A300E14D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FE5041223154A200E14D0C /* Main.storyboard */; };
 		24FE5045223154A300E14D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FE5044223154A300E14D0C /* Assets.xcassets */; };
 		24FE5048223154A300E14D0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FE5046223154A300E14D0C /* LaunchScreen.storyboard */; };
+		24FE5056223186A900E14D0C /* MSItunesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE5055223186A900E14D0C /* MSItunesTableViewCell.swift */; };
+		24FE5058223186C200E14D0C /* MSLastfmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */; };
+		24FE505A2231964100E14D0C /* MSItunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50592231964100E14D0C /* MSItunesTableViewController.swift */; };
+		24FE505E2231970400E14D0C /* MSLastfmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24FE503A223154A200E14D0C /* MusicSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE503D223154A200E14D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24FE503F223154A200E14D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24FE503F223154A200E14D0C /* MSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSMainViewController.swift; sourceTree = "<group>"; };
 		24FE5042223154A300E14D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24FE5044223154A300E14D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24FE5047223154A300E14D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24FE5049223154A300E14D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24FE5055223186A900E14D0C /* MSItunesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSItunesTableViewCell.swift; sourceTree = "<group>"; };
+		24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSLastfmTableViewCell.swift; sourceTree = "<group>"; };
+		24FE50592231964100E14D0C /* MSItunesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSItunesTableViewController.swift; sourceTree = "<group>"; };
+		24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSLastfmTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		24FE503C223154A200E14D0C /* MusicSearcher */ = {
 			isa = PBXGroup;
 			children = (
-				24FE503D223154A200E14D0C /* AppDelegate.swift */,
-				24FE503F223154A200E14D0C /* ViewController.swift */,
-				24FE5041223154A200E14D0C /* Main.storyboard */,
+				24FE5050223182DD00E14D0C /* Source */,
+				24FE504F223182C400E14D0C /* Design */,
 				24FE5044223154A300E14D0C /* Assets.xcassets */,
-				24FE5046223154A300E14D0C /* LaunchScreen.storyboard */,
 				24FE5049223154A300E14D0C /* Info.plist */,
 			);
 			path = MusicSearcher;
+			sourceTree = "<group>";
+		};
+		24FE504F223182C400E14D0C /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				24FE5041223154A200E14D0C /* Main.storyboard */,
+				24FE5046223154A300E14D0C /* LaunchScreen.storyboard */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
+		24FE5050223182DD00E14D0C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				24FE503D223154A200E14D0C /* AppDelegate.swift */,
+				24FE503F223154A200E14D0C /* MSMainViewController.swift */,
+				24FE505B223196B100E14D0C /* iTunes */,
+				24FE505C223196C000E14D0C /* Last.fm */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		24FE505B223196B100E14D0C /* iTunes */ = {
+			isa = PBXGroup;
+			children = (
+				24FE50592231964100E14D0C /* MSItunesTableViewController.swift */,
+				24FE5055223186A900E14D0C /* MSItunesTableViewCell.swift */,
+			);
+			name = iTunes;
+			sourceTree = "<group>";
+		};
+		24FE505C223196C000E14D0C /* Last.fm */ = {
+			isa = PBXGroup;
+			children = (
+				24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */,
+				24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */,
+			);
+			name = Last.fm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24FE5040223154A200E14D0C /* ViewController.swift in Sources */,
+				24FE505E2231970400E14D0C /* MSLastfmTableViewController.swift in Sources */,
+				24FE5040223154A200E14D0C /* MSMainViewController.swift in Sources */,
+				24FE5056223186A900E14D0C /* MSItunesTableViewCell.swift in Sources */,
 				24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */,
+				24FE505A2231964100E14D0C /* MSItunesTableViewController.swift in Sources */,
+				24FE5058223186C200E14D0C /* MSLastfmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +345,7 @@
 				24FE504E223154A300E14D0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
