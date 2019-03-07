@@ -12,8 +12,11 @@ class MSMainViewController: UIViewController {
     
     // MARK: - Controls
 
+    // Platforms:
     @IBOutlet weak var itunesTableView: UIView!
     @IBOutlet weak var lastfmTableView: UIView!
+    
+    // IBOutlets
     @IBOutlet weak var platformSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchTrackBar: UISearchBar!
     
@@ -23,7 +26,7 @@ class MSMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNeededSegment()
+        
     }
     
     
@@ -46,6 +49,16 @@ class MSMainViewController: UIViewController {
         } else {
             itunesTableView.isHidden = true
             lastfmTableView.isHidden = false
+        }
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "itunesSegue" {
+            let vc = segue.destination as! MSItunesTableViewController
+            vc.searchText = searchTrackBar.text
         }
     }
 }

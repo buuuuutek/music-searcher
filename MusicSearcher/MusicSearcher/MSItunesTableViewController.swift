@@ -9,10 +9,24 @@
 import UIKit
 
 class MSItunesTableViewController: UITableViewController {
+    
+    // MARK: - Fields
+    
+    // Entered text by user
+    var searchText: String! {
+        didSet {
+            if !(searchText.isEmpty) {
+                print("Search text is \(searchText)")
+            }
+        }
+    }
+    
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hallo from iTunes Controller")
+        print("iTunes Table View Controller loaded.")
     }
 
 

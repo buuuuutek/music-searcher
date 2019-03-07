@@ -16,6 +16,9 @@
 		24FE5058223186C200E14D0C /* MSLastfmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */; };
 		24FE505A2231964100E14D0C /* MSItunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50592231964100E14D0C /* MSItunesTableViewController.swift */; };
 		24FE505E2231970400E14D0C /* MSLastfmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */; };
+		24FE50632231BDA400E14D0C /* MSNetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */; };
+		24FE50672231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50662231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift */; };
+		24FE50692231C79600E14D0C /* MSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50682231C79600E14D0C /* MSNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSLastfmTableViewCell.swift; sourceTree = "<group>"; };
 		24FE50592231964100E14D0C /* MSItunesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSItunesTableViewController.swift; sourceTree = "<group>"; };
 		24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSLastfmTableViewController.swift; sourceTree = "<group>"; };
+		24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetworkConstant.swift; sourceTree = "<group>"; };
+		24FE50662231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MSViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		24FE50682231C79600E14D0C /* MSNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				24FE503D223154A200E14D0C /* AppDelegate.swift */,
-				24FE503F223154A200E14D0C /* MSMainViewController.swift */,
-				24FE505B223196B100E14D0C /* iTunes */,
-				24FE505C223196C000E14D0C /* Last.fm */,
+				24FE50652231C56C00E14D0C /* MVC */,
+				24FE50642231C50600E14D0C /* Extensions */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -128,8 +133,28 @@
 		24FE50612231A5ED00E14D0C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */,
+				24FE50682231C79600E14D0C /* MSNetwork.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		24FE50642231C50600E14D0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24FE50662231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		24FE50652231C56C00E14D0C /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				24FE503F223154A200E14D0C /* MSMainViewController.swift */,
+				24FE505B223196B100E14D0C /* iTunes */,
+				24FE505C223196C000E14D0C /* Last.fm */,
+			);
+			name = MVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +231,12 @@
 			files = (
 				24FE505E2231970400E14D0C /* MSLastfmTableViewController.swift in Sources */,
 				24FE5040223154A200E14D0C /* MSMainViewController.swift in Sources */,
+				24FE50632231BDA400E14D0C /* MSNetworkConstant.swift in Sources */,
+				24FE50672231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift in Sources */,
 				24FE5056223186A900E14D0C /* MSItunesTableViewCell.swift in Sources */,
 				24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */,
 				24FE505A2231964100E14D0C /* MSItunesTableViewController.swift in Sources */,
+				24FE50692231C79600E14D0C /* MSNetwork.swift in Sources */,
 				24FE5058223186C200E14D0C /* MSLastfmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

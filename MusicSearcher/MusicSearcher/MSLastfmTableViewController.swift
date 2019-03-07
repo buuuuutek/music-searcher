@@ -12,7 +12,7 @@ class MSLastfmTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hallo from Last.fm Controller")
+        print("Last.fm Table View Controller loaded.")
     }
 
     override func didReceiveMemoryWarning() {
