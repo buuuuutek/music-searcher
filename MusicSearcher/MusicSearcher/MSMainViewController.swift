@@ -13,8 +13,8 @@ class MSMainViewController: UIViewController {
     // MARK: - Controls
 
     // Platforms:
-    @IBOutlet weak var itunesTableView: UIView!
-    @IBOutlet weak var lastfmTableView: UIView!
+    @IBOutlet weak var itunesTableView: MSItunesTableViewController!
+    @IBOutlet weak var lastfmTableView: MSLastfmTableViewController!
     
     // IBOutlets
     @IBOutlet weak var platformSegmentedControl: UISegmentedControl!
@@ -44,21 +44,11 @@ class MSMainViewController: UIViewController {
     private func loadNeededSegment() {
         // iTunes segment was chosen
         if platformSegmentedControl.selectedSegmentIndex == 0 {
-            itunesTableView.isHidden = false
-            lastfmTableView.isHidden = true
+            itunesTableView.tableView.isHidden = false
+            lastfmTableView.tableView.isHidden = true
         } else {
-            itunesTableView.isHidden = true
-            lastfmTableView.isHidden = false
-        }
-    }
-    
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "itunesSegue" {
-            let vc = segue.destination as! MSItunesTableViewController
-            vc.searchText = searchTrackBar.text
+            itunesTableView.tableView.isHidden = true
+            lastfmTableView.tableView.isHidden = false
         }
     }
 }

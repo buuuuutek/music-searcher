@@ -8,19 +8,7 @@
 
 import UIKit
 
-class MSItunesTableViewController: UITableViewController {
-    
-    // MARK: - Fields
-    
-    // Entered text by user
-    var searchText: String! {
-        didSet {
-            if !(searchText.isEmpty) {
-                print("Search text is \(searchText)")
-            }
-        }
-    }
-    
+class MSItunesTableViewController: UITableViewController, MSNetworkable {
 
     // MARK: - Lifecycle
     
@@ -29,6 +17,24 @@ class MSItunesTableViewController: UITableViewController {
         print("iTunes Table View Controller loaded.")
     }
 
+    
+    // MARK: - Functions
+    
+    func searchOnServer(by materials: String) {
+        let url = MSNetworkConstant.itunes + materials
+        let network = MSNetwork(url: url)
+        network.connecting { (data, response, error) in
+            guard data != nil, response != nil else {
+                print("Response from \(url) is empty.")
+                return
+            }
+                
+            if let stringResponse = String(bytes: data!, encoding: .utf8) {
+                print(stringResponse)
+            }
+        }
+    }
+    
 
     // MARK: - Table view data source
 

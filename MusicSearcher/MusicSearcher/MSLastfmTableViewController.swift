@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MSLastfmTableViewController: UITableViewController {
+class MSLastfmTableViewController: UITableViewController, MSNetworkable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,10 @@ class MSLastfmTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func searchOnServer(by materials: String) {
+        
     }
 
     // MARK: - Table view data source

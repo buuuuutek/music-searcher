@@ -10,37 +10,46 @@ import Foundation
 
 class MSNetwork {
     
-    // MARK: - Properties
+    // MARK: - Fields
     
-    private var collectedURL: String
+    private var url: String
+    
+    
+    // MARK: - Typealias
+    
+    typealias ResponseHandler = ((_ : Data?, _ : URLResponse?, _ : Error?) -> Void)
     
     
     // MARK: - Initializers
     
-    init(searchText: String) {
-        self.collectedURL = MSNetworkConstant.itunes + searchText
+    init(url: String) {
+        print("Try to connection by URL (\(url))...")
+        self.url = url
     }
     
     
     // MARK: - Functions
     
-    func startConnecting() {
-        guard let url = URL(string: self.collectedURL) else {
+    func connecting(_ handler: @escaping ResponseHandler) {
+        guard let url = URL(string: self.url) else {
             print("Could not make the correct URL.")
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard data != nil, response != nil else {
-                print("Response from \(url.absoluteString) is empty.")
-                return
-            }
-            
-            if let stringResponse = String(bytes: data!, encoding: .utf8) {
-                print(stringResponse)
-            }
-        }
+        URLSession.shared.dataTask(with: url, completionHandler: handler).resume()
         
-        task.resume()
+//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+//            guard data != nil, response != nil else {
+//                print("Response from \(url.absoluteString) is empty.")
+//                return
+//            }
+//            
+//            if let stringResponse = String(bytes: data!, encoding: .utf8) {
+//                print(stringResponse)
+//            }
+//        }
+        
+//        task.resume()
     }
+    
 }

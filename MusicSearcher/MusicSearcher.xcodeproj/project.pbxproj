@@ -19,6 +19,7 @@
 		24FE50632231BDA400E14D0C /* MSNetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */; };
 		24FE50672231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50662231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift */; };
 		24FE50692231C79600E14D0C /* MSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE50682231C79600E14D0C /* MSNetwork.swift */; };
+		24FE506C2231D6E200E14D0C /* MSNetworkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE506B2231D6E200E14D0C /* MSNetworkable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetworkConstant.swift; sourceTree = "<group>"; };
 		24FE50662231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MSViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		24FE50682231C79600E14D0C /* MSNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetwork.swift; sourceTree = "<group>"; };
+		24FE506B2231D6E200E14D0C /* MSNetworkable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetworkable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,18 +127,19 @@
 		24FE50602231A5D200E14D0C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				24FE50612231A5ED00E14D0C /* Networking */,
+				24FE50612231A5ED00E14D0C /* Network */,
 			);
 			name = Services;
 			sourceTree = "<group>";
 		};
-		24FE50612231A5ED00E14D0C /* Networking */ = {
+		24FE50612231A5ED00E14D0C /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */,
+				24FE506B2231D6E200E14D0C /* MSNetworkable.swift */,
 				24FE50682231C79600E14D0C /* MSNetwork.swift */,
 			);
-			name = Networking;
+			name = Network;
 			sourceTree = "<group>";
 		};
 		24FE50642231C50600E14D0C /* Extensions */ = {
@@ -233,6 +236,7 @@
 				24FE5040223154A200E14D0C /* MSMainViewController.swift in Sources */,
 				24FE50632231BDA400E14D0C /* MSNetworkConstant.swift in Sources */,
 				24FE50672231C5AB00E14D0C /* MSViewController+UISearchBarDelegate.swift in Sources */,
+				24FE506C2231D6E200E14D0C /* MSNetworkable.swift in Sources */,
 				24FE5056223186A900E14D0C /* MSItunesTableViewCell.swift in Sources */,
 				24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */,
 				24FE505A2231964100E14D0C /* MSItunesTableViewController.swift in Sources */,
