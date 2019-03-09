@@ -10,25 +10,10 @@ import UIKit
 
 extension MSMainViewController: UISearchBarDelegate {
     
-    // MARK: - Properties
-    
-    var platforms: [MSNetworkable] {
-        get {
-            return [itunesTableView, lastfmTableView]
-        }
-    }
-    
-    
     // MARK: - Functions
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let materials = searchBar.text!
-        searchInDifferentPlatforms(materials)
+        self.itunes.searchOnServer(by: searchTrackBar.text!)
     }
-    
-    private func searchInDifferentPlatforms(_ materials: String) {
-        for platform in platforms {
-            platform.searchOnServer(by: materials)
-        }
-    }
+
 }

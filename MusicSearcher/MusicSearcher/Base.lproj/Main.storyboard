@@ -28,7 +28,7 @@
                                     <navigationItem id="Exw-tJ-VSF">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="wi9-7a-qVf">
-                                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="iTunes"/>
@@ -41,16 +41,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3H-48-jDY">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3H-48-jDY" customClass="MSItunesTableViewCell" customModule="MusicSearcher" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <connections>
                                     <segue destination="U9q-KV-Iko" kind="embed" id="wx1-WN-qyv"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6c-Jw-EcQ">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                                <connections>
-                                    <segue destination="S2R-wl-bte" kind="embed" identifier="itunesSegue" id="MqG-mS-dEd"/>
                                 </connections>
                             </containerView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Aqc-8L-Ygc">
@@ -64,6 +58,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="bpv-I1-0ky"/>
                                 </connections>
                             </searchBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6c-Jw-EcQ" customClass="MSLastfmTableViewCell" customModule="MusicSearcher" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <connections>
+                                    <segue destination="S2R-wl-bte" kind="embed" identifier="itunesSegue" id="MqG-mS-dEd"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -85,8 +85,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="itunesTableView" destination="T3H-48-jDY" id="4Ee-a9-rng"/>
-                        <outlet property="lastfmTableView" destination="K6c-Jw-EcQ" id="nSL-dn-y2w"/>
                         <outlet property="platformSegmentedControl" destination="wi9-7a-qVf" id="jxX-GE-20L"/>
                         <outlet property="searchTrackBar" destination="Aqc-8L-Ygc" id="iER-vL-qua"/>
                     </connections>
@@ -108,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A3q-w9-d4M" id="2wS-50-xSx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFV-c9-3j5">
@@ -170,7 +168,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fSf-4r-MS0" id="Qi3-iy-liT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZdW-Ir-3P0">

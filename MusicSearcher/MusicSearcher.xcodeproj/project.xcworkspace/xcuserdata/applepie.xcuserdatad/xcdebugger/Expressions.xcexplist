@@ -6,7 +6,23 @@
          contextName = "MSMainViewController.searchInDifferentPlatforms(String) -&gt; ():MSViewController+UISearchBarDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "platform is MSNetworkable">
+               value = "itunesTableView is MSNetworkable">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MSItunesTableViewController.searchText.didset:MSItunesTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MSMainViewController.searchBarSearchButtonClicked(UISearchBar) -&gt; ():MSViewController+UISearchBarDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NotificationCenter.default">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

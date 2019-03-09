@@ -12,21 +12,21 @@ class MSMainViewController: UIViewController {
     
     // MARK: - Controls
 
-    // Platforms:
-    @IBOutlet weak var itunesTableView: MSItunesTableViewController!
-    @IBOutlet weak var lastfmTableView: MSLastfmTableViewController!
-    
-    // IBOutlets
     @IBOutlet weak var platformSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchTrackBar: UISearchBar!
     
+    
+    // MARK: - Fields
+    
+    // Platforms for passing value between vc and contaiter view
+    var itunes: MSItunesTableViewController!
+    var lastfm: MSLastfmTableViewController!
     
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     
@@ -44,11 +44,25 @@ class MSMainViewController: UIViewController {
     private func loadNeededSegment() {
         // iTunes segment was chosen
         if platformSegmentedControl.selectedSegmentIndex == 0 {
-            itunesTableView.tableView.isHidden = false
-            lastfmTableView.tableView.isHidden = true
+            itunes.tableView.isHidden = false
+            lastfm.tableView.isHidden = true
         } else {
-            itunesTableView.tableView.isHidden = true
-            lastfmTableView.tableView.isHidden = false
+            itunes.tableView.isHidden = true
+            lastfm.tableView.isHidden = false
+        }
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "itunesSegue" {
+            let itunesTableViewController = segue.destination as! MSItunesTableViewController
+            self.itunes = itunesTableViewController
+        }
+        if segue.identifier == "lastfmSegue" {
+            let lastfmTableViewController = segue.destination as! MSLastfmTableViewController
+            self.lastfm = lastfmTableViewController
         }
     }
 }
