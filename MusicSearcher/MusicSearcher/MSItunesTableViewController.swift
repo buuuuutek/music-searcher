@@ -9,6 +9,11 @@
 import UIKit
 
 class MSItunesTableViewController: UITableViewController, MSNetworkable {
+    
+    // MARK: - Fields
+    
+    private lazy var tracks = [MSTrack]()
+    
 
     // MARK: - Lifecycle
     
@@ -18,22 +23,50 @@ class MSItunesTableViewController: UITableViewController, MSNetworkable {
     }
 
     
+    
     // MARK: - Functions
     
     func searchOnServer(by materials: String) {
         let url = MSNetworkConstant.itunes + materials
         let network = MSNetwork(url: url)
         network.connecting { (data, response, error) in
-            guard data != nil, response != nil else {
-                print("Response from \(url) is empty.")
+            guard data != nil && response != nil else {
+                print("[...] iTunes data or response is nil")
+                print("[...] iTunes error is \(error?.localizedDescription)")
                 return
             }
-                
-            if let stringResponse = String(bytes: data!, encoding: .utf8) {
-                print(stringResponse)
+            
+            let statusCode = MSNetworkTool.getStatus(response!)
+            if statusCode == .success {
+                print("[...] iTunes response is success.")
+                self.parseResponse(json: data!)
+            } else {
+                print("[...] iTunes status code is \(statusCode.rawValue)")
             }
         }
     }
+    
+    func parseResponse(json: Data) {
+        print("[...] Trying to parse response data...")
+        
+        if let jsonDictionary = try? JSONSerialization.jsonObject(with: json) as? [String: Any] {
+            if let resultsDictionary = jsonDictionary!["results"] as? [Dictionary<String, Any>] {
+                for item in resultsDictionary {
+                    let artistName = item["artistName"] as! String
+                    let trackName = item["trackName"] as! String
+                    let artworkUrl = URL(string: item["artworkUrl100"] as! String)
+                    let track = MSTrack(name: trackName, artist: artistName, artworkUrl: artworkUrl)
+                    tracks.append(track)
+                }
+            } else {
+                print("[...] Results parsing is failed.")
+            }
+        }
+        else {
+            print("[...] JSON parsing is failed.")
+        }
+    }
+
     
 
     // MARK: - Table view data source

@@ -85,6 +85,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
+                        <outlet property="itunesTableView" destination="T3H-48-jDY" id="yeg-7c-5PY"/>
+                        <outlet property="lastfmTableView" destination="K6c-Jw-EcQ" id="2Oh-ip-m1o"/>
                         <outlet property="platformSegmentedControl" destination="wi9-7a-qVf" id="jxX-GE-20L"/>
                         <outlet property="searchTrackBar" destination="Aqc-8L-Ygc" id="iER-vL-qua"/>
                     </connections>

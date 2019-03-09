@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24AC3AB622340A5B00A40045 /* MSNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3AB522340A5B00A40045 /* MSNetworkTool.swift */; };
+		24AC3AB822340B3A00A40045 /* MSNetworkStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3AB722340B3A00A40045 /* MSNetworkStatusResponse.swift */; };
+		24AC3ABC22341A3300A40045 /* MSTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC3ABB22341A3300A40045 /* MSTrack.swift */; };
 		24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503D223154A200E14D0C /* AppDelegate.swift */; };
 		24FE5040223154A200E14D0C /* MSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503F223154A200E14D0C /* MSMainViewController.swift */; };
 		24FE5043223154A300E14D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FE5041223154A200E14D0C /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24AC3AB522340A5B00A40045 /* MSNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetworkTool.swift; sourceTree = "<group>"; };
+		24AC3AB722340B3A00A40045 /* MSNetworkStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSNetworkStatusResponse.swift; sourceTree = "<group>"; };
+		24AC3ABB22341A3300A40045 /* MSTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSTrack.swift; sourceTree = "<group>"; };
 		24FE503A223154A200E14D0C /* MusicSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE503D223154A200E14D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24FE503F223154A200E14D0C /* MSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSMainViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24AC3ABD22341A3A00A40045 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24AC3ABB22341A3300A40045 /* MSTrack.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		24AC3ABE22341A5D00A40045 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */,
+				24FE5055223186A900E14D0C /* MSItunesTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		24AC3ABF22341A7300A40045 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				24FE50592231964100E14D0C /* MSItunesTableViewController.swift */,
+				24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */,
+				24FE503F223154A200E14D0C /* MSMainViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		24FE5031223154A100E14D0C = {
 			isa = PBXGroup;
 			children = (
@@ -96,24 +129,6 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
-		24FE505B223196B100E14D0C /* iTunes */ = {
-			isa = PBXGroup;
-			children = (
-				24FE50592231964100E14D0C /* MSItunesTableViewController.swift */,
-				24FE5055223186A900E14D0C /* MSItunesTableViewCell.swift */,
-			);
-			name = iTunes;
-			sourceTree = "<group>";
-		};
-		24FE505C223196C000E14D0C /* Last.fm */ = {
-			isa = PBXGroup;
-			children = (
-				24FE505D2231970400E14D0C /* MSLastfmTableViewController.swift */,
-				24FE5057223186C200E14D0C /* MSLastfmTableViewCell.swift */,
-			);
-			name = Last.fm;
-			sourceTree = "<group>";
-		};
 		24FE505F2231A59000E14D0C /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +153,8 @@
 				24FE50622231BDA400E14D0C /* MSNetworkConstant.swift */,
 				24FE506B2231D6E200E14D0C /* MSNetworkable.swift */,
 				24FE50682231C79600E14D0C /* MSNetwork.swift */,
+				24AC3AB522340A5B00A40045 /* MSNetworkTool.swift */,
+				24AC3AB722340B3A00A40045 /* MSNetworkStatusResponse.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -153,9 +170,9 @@
 		24FE50652231C56C00E14D0C /* MVC */ = {
 			isa = PBXGroup;
 			children = (
-				24FE503F223154A200E14D0C /* MSMainViewController.swift */,
-				24FE505B223196B100E14D0C /* iTunes */,
-				24FE505C223196C000E14D0C /* Last.fm */,
+				24AC3ABF22341A7300A40045 /* ViewControllers */,
+				24AC3ABE22341A5D00A40045 /* Views */,
+				24AC3ABD22341A3A00A40045 /* Models */,
 			);
 			name = MVC;
 			sourceTree = "<group>";
@@ -241,7 +258,10 @@
 				24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */,
 				24FE505A2231964100E14D0C /* MSItunesTableViewController.swift in Sources */,
 				24FE50692231C79600E14D0C /* MSNetwork.swift in Sources */,
+				24AC3AB822340B3A00A40045 /* MSNetworkStatusResponse.swift in Sources */,
 				24FE5058223186C200E14D0C /* MSLastfmTableViewCell.swift in Sources */,
+				24AC3AB622340A5B00A40045 /* MSNetworkTool.swift in Sources */,
+				24AC3ABC22341A3300A40045 /* MSTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,10 @@ class MSLastfmTableViewController: UITableViewController, MSNetworkable {
     func searchOnServer(by materials: String) {
         
     }
+    
+    func parseResponse(json: Data) {
+        
+    }
 
     // MARK: - Table view data source
 

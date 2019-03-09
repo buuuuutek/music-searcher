@@ -13,7 +13,8 @@ extension MSMainViewController: UISearchBarDelegate {
     // MARK: - Functions
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.itunes.searchOnServer(by: searchTrackBar.text!)
+        for item in platforms {
+            item.searchOnServer(by: searchBar.text!)
+        }
     }
-
 }

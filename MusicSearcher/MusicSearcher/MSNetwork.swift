@@ -37,19 +37,6 @@ class MSNetwork {
         }
         
         URLSession.shared.dataTask(with: url, completionHandler: handler).resume()
-        
-//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-//            guard data != nil, response != nil else {
-//                print("Response from \(url.absoluteString) is empty.")
-//                return
-//            }
-//            
-//            if let stringResponse = String(bytes: data!, encoding: .utf8) {
-//                print(stringResponse)
-//            }
-//        }
-        
-//        task.resume()
     }
     
 }

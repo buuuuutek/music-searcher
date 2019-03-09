@@ -12,23 +12,17 @@ class MSMainViewController: UIViewController {
     
     // MARK: - Controls
 
+    @IBOutlet weak var itunesTableView: UIView!
+    @IBOutlet weak var lastfmTableView: UIView!
     @IBOutlet weak var platformSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchTrackBar: UISearchBar!
     
     
+    
     // MARK: - Fields
     
-    // Platforms for passing value between vc and contaiter view
-    var itunes: MSItunesTableViewController!
-    var lastfm: MSLastfmTableViewController!
-    
-    
-    // MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+    lazy var platforms = [MSNetworkable]()
+
     
     
     // MARK: - Controls Actions
@@ -44,25 +38,26 @@ class MSMainViewController: UIViewController {
     private func loadNeededSegment() {
         // iTunes segment was chosen
         if platformSegmentedControl.selectedSegmentIndex == 0 {
-            itunes.tableView.isHidden = false
-            lastfm.tableView.isHidden = true
+            itunesTableView.isHidden = false
+            lastfmTableView.isHidden = true
         } else {
-            itunes.tableView.isHidden = true
-            lastfm.tableView.isHidden = false
+            itunesTableView.isHidden = true
+            lastfmTableView.isHidden = false
         }
     }
+    
     
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itunesSegue" {
-            let itunesTableViewController = segue.destination as! MSItunesTableViewController
-            self.itunes = itunesTableViewController
+            let itunes = segue.destination as! MSItunesTableViewController
+            platforms.append(itunes)
         }
         if segue.identifier == "lastfmSegue" {
-            let lastfmTableViewController = segue.destination as! MSLastfmTableViewController
-            self.lastfm = lastfmTableViewController
+            let lastfm = segue.destination as! MSLastfmTableViewController
+            platforms.append(lastfm)
         }
     }
 }

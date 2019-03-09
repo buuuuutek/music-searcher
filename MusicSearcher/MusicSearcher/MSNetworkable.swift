@@ -12,4 +12,6 @@ protocol MSNetworkable {
     
     func searchOnServer(by materials: String)
     
+    func parseResponse(json: Data)
+    
 }
