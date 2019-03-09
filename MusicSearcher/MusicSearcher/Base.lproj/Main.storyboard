@@ -85,8 +85,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="itunesTableView" destination="T3H-48-jDY" id="yeg-7c-5PY"/>
-                        <outlet property="lastfmTableView" destination="K6c-Jw-EcQ" id="2Oh-ip-m1o"/>
+                        <outlet property="itunesTableView" destination="K6c-Jw-EcQ" id="746-S2-vQ9"/>
+                        <outlet property="lastfmTableView" destination="T3H-48-jDY" id="nMN-wM-jSp"/>
                         <outlet property="platformSegmentedControl" destination="wi9-7a-qVf" id="jxX-GE-20L"/>
                         <outlet property="searchTrackBar" destination="Aqc-8L-Ygc" id="iER-vL-qua"/>
                     </connections>
@@ -161,12 +161,12 @@
         <scene sceneID="9v9-uF-kHy">
             <objects>
                 <tableViewController id="S2R-wl-bte" customClass="MSItunesTableViewController" customModule="MusicSearcher" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-15-48m">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-15-48m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itunes" rowHeight="106" id="fSf-4r-MS0" customClass="MSiTunesTableViewCell" customModule="MusicSearcher" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itunes" rowHeight="106" id="fSf-4r-MS0" customClass="MSItunesTableViewCell" customModule="MusicSearcher" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fSf-4r-MS0" id="Qi3-iy-liT">
@@ -197,9 +197,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="ghv-sa-ReL" secondAttribute="trailing" constant="25" id="6Uv-Pm-PKl"/>
                                         <constraint firstItem="ghv-sa-ReL" firstAttribute="top" secondItem="Qi3-iy-liT" secondAttribute="topMargin" constant="15" id="6Xp-JV-FP2"/>
                                         <constraint firstItem="IE5-xn-1OQ" firstAttribute="leading" secondItem="ZdW-Ir-3P0" secondAttribute="trailing" constant="25" id="DA1-Ue-yZc"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZdW-Ir-3P0" secondAttribute="bottom" constant="15" id="FzX-wa-pWn"/>
                                         <constraint firstItem="ghv-sa-ReL" firstAttribute="leading" secondItem="ZdW-Ir-3P0" secondAttribute="trailing" constant="25" id="KLa-U0-wEY"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="IE5-xn-1OQ" secondAttribute="bottom" constant="15" id="KeU-pO-THA"/>
                                         <constraint firstItem="ZdW-Ir-3P0" firstAttribute="leading" secondItem="Qi3-iy-liT" secondAttribute="leading" constant="15" id="Wi1-ua-3sO"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="IE5-xn-1OQ" secondAttribute="trailing" constant="25" id="apJ-uH-edv"/>
                                         <constraint firstItem="IE5-xn-1OQ" firstAttribute="top" secondItem="ghv-sa-ReL" secondAttribute="bottom" constant="15" id="dC2-0u-Oid"/>
@@ -207,9 +205,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="albumCover" destination="ZdW-Ir-3P0" id="Jo3-il-Ic8"/>
-                                    <outlet property="groupLabel" destination="ghv-sa-ReL" id="oOg-Rf-WU4"/>
-                                    <outlet property="songLabel" destination="IE5-xn-1OQ" id="IUc-Sk-rIm"/>
+                                    <outlet property="albumCover" destination="ZdW-Ir-3P0" id="UZz-mo-Qz7"/>
+                                    <outlet property="groupLabel" destination="ghv-sa-ReL" id="Co4-OF-nQz"/>
+                                    <outlet property="songLabel" destination="IE5-xn-1OQ" id="4Xt-G6-wHf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
