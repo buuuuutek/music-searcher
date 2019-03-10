@@ -19,5 +19,5 @@ protocol MSNetworkable {
     func clearPreviousResult()
     
     func collectPlatformURL(by searchText: String) -> String
-    
+
 }

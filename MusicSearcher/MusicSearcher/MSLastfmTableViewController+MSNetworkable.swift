@@ -16,15 +16,18 @@ extension MSLastfmTableViewController: MSNetworkable {
         self.clearPreviousResult()
         
         let url = self.collectPlatformURL(by: materials)
-        let network = MSNetwork(url: url)
+        let network = MSNetwork(url: url, vc: self)
         network.connecting { (data, response, error) in
             guard data != nil && response != nil else {
                 print("[...] Last.fm data or response is nil")
                 print("[...] Last.fm error is \(error?.localizedDescription)")
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Last.fm couldn't find something like \"\(materials)\"",
+                    in: self)
                 return
             }
 
-            let statusCode = MSNetworkTool.getStatus(response!)
+            let statusCode = MSNetworkAnalyzer.getStatus(response!)
             if statusCode == .success {
                 print("[...] Last.fm response is success.")
                 self.parseResponse(json: data!)
@@ -73,7 +76,7 @@ extension MSLastfmTableViewController: MSNetworkable {
     }
     
     func asyncDownloadArtwork(for cell: UITableViewCell, by url: String) {
-        let network = MSNetwork(url: url)
+        let network = MSNetwork(url: url, vc: self)
         network.connecting { (data, response, error) in
             guard data != nil && response != nil else {
                 print("[...] Downloading Last.fm artwork data or response is nil")

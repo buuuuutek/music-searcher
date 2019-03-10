@@ -16,15 +16,18 @@ extension MSItunesTableViewController: MSNetworkable {
         self.clearPreviousResult()
         
         let url = self.collectPlatformURL(by: materials)
-        let network = MSNetwork(url: url)
+        let network = MSNetwork(url: url, vc: self)
         network.connecting { (data, response, error) in
             guard data != nil && response != nil else {
                 print("[...] iTunes data or response is nil")
                 print("[...] iTunes error is \(error?.localizedDescription)")
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Last.fm couldn't find something like \"\(materials)\"",
+                    in: self)
                 return
             }
             
-            let statusCode = MSNetworkTool.getStatus(response!)
+            let statusCode = MSNetworkAnalyzer.getStatus(response!)
             if statusCode == .success {
                 print("[...] iTunes response is success.")
                 self.parseResponse(json: data!)
@@ -60,7 +63,7 @@ extension MSItunesTableViewController: MSNetworkable {
     }
     
     func asyncDownloadArtwork(for cell: UITableViewCell, by url: String) {
-        let network = MSNetwork(url: url)
+        let network = MSNetwork(url: url, vc: self)
         network.connecting { (data, response, error) in
             guard data != nil && response != nil else {
                 print("[...] Downloading iTunes artwork data or response is nil")

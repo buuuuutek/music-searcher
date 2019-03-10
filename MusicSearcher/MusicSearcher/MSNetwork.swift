@@ -6,13 +6,14 @@
 //  Copyright © 2019 VictorVolnukhin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MSNetwork {
     
     // MARK: - Fields
     
     private var url: String
+    private var vc: UIViewController
     
     
     // MARK: - Typealias
@@ -22,9 +23,11 @@ class MSNetwork {
     
     // MARK: - Initializers
     
-    init(url: String) {
-        print("[...] Try to connection by URL (\(url))...")
+    init(url: String, vc: UIViewController) {
+        // Debug log:
+        // print("[...] Try to connection by URL (\(url))...")
         self.url = url
+        self.vc = vc
     }
     
     
@@ -33,6 +36,9 @@ class MSNetwork {
     func connecting(_ handler: @escaping ResponseHandler) {
         guard let url = URL(string: self.url) else {
             print("Could not make the correct URL.")
+            MSNetworkAnalyzer.showOopsAlert(
+                with: "Application couldn't collect the correct URL. Try again or change your search request.",
+                in: self.vc)
             return
         }
         

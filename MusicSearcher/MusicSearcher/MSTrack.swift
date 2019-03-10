@@ -25,6 +25,7 @@ class MSTrack {
         self.name = name
         self.artist = artist
         self.artworkUrl = artworkUrl
-        print("[...] Created '\(name)' track of '\(artist)'.")
+        // Debug log:
+        // print("[...] Created '\(name)' track of '\(artist)'.")
     }
 }
