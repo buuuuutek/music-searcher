@@ -40,7 +40,7 @@
                                     <navigationItem id="Exw-tJ-VSF">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="wi9-7a-qVf">
-                                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="iTunes"/>
@@ -57,7 +57,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3H-48-jDY" customClass="MSItunesTableViewCell" customModule="MusicSearcher" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <connections>
-                                    <segue destination="U9q-KV-Iko" kind="embed" id="wx1-WN-qyv"/>
+                                    <segue destination="U9q-KV-Iko" kind="embed" identifier="lastfmSegue" id="wx1-WN-qyv"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6c-Jw-EcQ" customClass="MSLastfmTableViewCell" customModule="MusicSearcher" customModuleProvider="target">
@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A3q-w9-d4M" id="2wS-50-xSx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXC-vE-Tvj">
