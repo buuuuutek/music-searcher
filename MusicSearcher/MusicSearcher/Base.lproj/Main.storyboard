@@ -91,8 +91,6 @@
                         <outlet property="lastfmTableView" destination="T3H-48-jDY" id="nMN-wM-jSp"/>
                         <outlet property="platformSegmentedControl" destination="wi9-7a-qVf" id="jxX-GE-20L"/>
                         <outlet property="searchTrackBar" destination="Aqc-8L-Ygc" id="iER-vL-qua"/>
-                        <outlet property="segmentedNavigationBar" destination="RLR-Br-g7W" id="s0V-GZ-fNG"/>
-                        <outlet property="segmentedNavigationItem" destination="Exw-tJ-VSF" id="K2v-aU-Vtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

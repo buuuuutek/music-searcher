@@ -21,9 +21,11 @@ extension MSLastfmTableViewController: MSNetworkable {
             guard data != nil && response != nil else {
                 print("[...] Last.fm data or response is nil")
                 print("[...] Last.fm error is \(error?.localizedDescription)")
-                MSNetworkAnalyzer.showOopsAlert(
-                    with: "Last.fm couldn't find something like \"\(materials)\"",
-                    in: self)
+                DispatchQueue.main.async {
+                    MSNetworkAnalyzer.showOopsAlert(
+                        with: "Last.fm couldn't find something like \"\(materials)\"",
+                        in: self)
+                }
                 return
             }
 
@@ -45,21 +47,41 @@ extension MSLastfmTableViewController: MSNetworkable {
         
         guard let jsonDictionary = try? JSONSerialization.jsonObject(with: json) as? [String: Any] else {
             print("[...] JSON parsing is failed.")
+            DispatchQueue.main.async {
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Something wrong with server response. Please, try again.",
+                    in: self)
+            }
             return
         }
         
         guard let resultsDictionary = jsonDictionary!["results"] as? [String: Any] else {
             print("[...] Results parsing is failed.")
+            DispatchQueue.main.async {
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Something wrong with server response. Please, try again.",
+                    in: self)
+            }
             return
         }
         
         guard let trackmatches = resultsDictionary["trackmatches"] as? [String: Any] else {
             print("[...] Trackmatches is empty.")
+            DispatchQueue.main.async {
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Something wrong with server response. Please, try again.",
+                    in: self)
+            }
             return
         }
         
         guard let jsonTracks = trackmatches["track"] as? [Dictionary<String, Any>] else {
             print("[...] JSON doesn't have tracks.")
+            DispatchQueue.main.async {
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Something wrong with server response. Please, try again.",
+                    in: self)
+            }
             return
         }
 

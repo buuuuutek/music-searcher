@@ -21,9 +21,11 @@ extension MSItunesTableViewController: MSNetworkable {
             guard data != nil && response != nil else {
                 print("[...] iTunes data or response is nil")
                 print("[...] iTunes error is \(error?.localizedDescription)")
-                MSNetworkAnalyzer.showOopsAlert(
-                    with: "Last.fm couldn't find something like \"\(materials)\"",
-                    in: self)
+                DispatchQueue.main.async {
+                    MSNetworkAnalyzer.showOopsAlert(
+                        with: "Last.fm couldn't find something like \"\(materials)\"",
+                        in: self)
+                }
                 return
             }
             
@@ -53,12 +55,27 @@ extension MSItunesTableViewController: MSNetworkable {
                     tracks.append(track)
                 }
                 print("[...] Parsing process competed successfully.")
+                DispatchQueue.main.async {
+                    MSNetworkAnalyzer.showOopsAlert(
+                        with: "Something wrong with server response. Please, try again.",
+                        in: self)
+                }
             } else {
                 print("[...] Results parsing is failed.")
+                DispatchQueue.main.async {
+                    MSNetworkAnalyzer.showOopsAlert(
+                        with: "Something wrong with server response. Please, try again.",
+                        in: self)
+                }
             }
         }
         else {
             print("[...] JSON parsing is failed.")
+            DispatchQueue.main.async {
+                MSNetworkAnalyzer.showOopsAlert(
+                    with: "Something wrong with server response. Please, try again.",
+                    in: self)
+            }
         }
     }
     

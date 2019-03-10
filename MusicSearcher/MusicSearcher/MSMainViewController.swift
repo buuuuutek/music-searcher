@@ -16,11 +16,8 @@ class MSMainViewController: UIViewController {
     @IBOutlet weak var lastfmTableView: UIView!
     @IBOutlet weak var platformSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchTrackBar: UISearchBar!
-    @IBOutlet weak var segmentedNavigationBar: UINavigationBar!
-    @IBOutlet weak var segmentedNavigationItem: UINavigationItem!
 
-    
-    
+
     
     // MARK: - Fields
     
