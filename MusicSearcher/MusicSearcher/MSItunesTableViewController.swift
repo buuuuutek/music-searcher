@@ -20,7 +20,7 @@ class MSItunesTableViewController: UITableViewController, MSNetworkable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("iTunes Table View Controller loaded.")
+        print("[...] iTunes Table View Controller loaded.")
     }
 
     
@@ -28,7 +28,7 @@ class MSItunesTableViewController: UITableViewController, MSNetworkable {
     // MARK: - Functions
     
     func searchOnServer(by materials: String) {
-        let url = MSNetworkConstant.itunes + materials
+        let url = self.collectURL(materials)
         let network = MSNetwork(url: url)
         network.connecting { (data, response, error) in
             guard data != nil && response != nil else {
@@ -54,14 +54,16 @@ class MSItunesTableViewController: UITableViewController, MSNetworkable {
         print("[...] Trying to parse response data...")
         
         if let jsonDictionary = try? JSONSerialization.jsonObject(with: json) as? [String: Any] {
+            print(jsonDictionary)
             if let resultsDictionary = jsonDictionary!["results"] as? [Dictionary<String, Any>] {
                 for item in resultsDictionary {
                     let artistName = item["artistName"] as! String
                     let trackName = item["trackName"] as! String
-                    let artworkUrl = URL(string: item["artworkUrl100"] as! String)
+                    let artworkUrl = item["artworkUrl100"] as! String
                     let track = MSTrack(name: trackName, artist: artistName, artworkUrl: artworkUrl)
                     tracks.append(track)
                 }
+                print("[...] Parsing process competed successfully.")
             } else {
                 print("[...] Results parsing is failed.")
             }
@@ -70,7 +72,30 @@ class MSItunesTableViewController: UITableViewController, MSNetworkable {
             print("[...] JSON parsing is failed.")
         }
     }
+    
+    private func asyncDownloadArtwork(for cell: UITableViewCell, by url: String) {
+        let network = MSNetwork(url: url)
+        network.connecting { (data, response, error) in
+            guard data != nil && response != nil else {
+                print("[...] Downloading iTunes artwork data or response is nil")
+                print("[...] Downloading iTunes artwork error is \(error?.localizedDescription)")
+                return
+            }
+            
+            let cell = cell as! MSItunesTableViewCell
+            print("[...] Trying to loading artwork for \(cell.groupLabel.text!)'s song \(cell.songLabel.text!)")
+            
+            DispatchQueue.main.async {
+                cell.albumCover.image = UIImage(data: data!)
+            }
+        }
+    }
 
+    private func collectURL(_ string: String) -> String {
+        let newString = string.replacingOccurrences(of: " ", with: "+")
+        return MSNetworkConstant.itunes.url + newString +
+            MSNetworkConstant.itunes.filter.artist + MSNetworkConstant.chars.and + MSNetworkConstant.itunes.filter.track
+    }
     
 
     // MARK: - Table view data source
@@ -87,9 +112,7 @@ class MSItunesTableViewController: UITableViewController, MSNetworkable {
         let track = tracks[indexPath.row]
         cell.groupLabel.text = track.artist
         cell.songLabel.text = track.name
-        
-//        Async loading:
-//        cell.albumCover.image =
+        asyncDownloadArtwork(for: cell, by: track.artworkUrl)
 
         return cell
     }

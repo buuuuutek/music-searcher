@@ -6,7 +6,7 @@
 //  Copyright © 2019 VictorVolnukhin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MSTrack {
     
@@ -14,14 +14,14 @@ class MSTrack {
     
     var artist: String
     var name: String
-    var artworkUrl: URL?
+    var artworkUrl: String
     // async loading
-    var artwork: Data!
+    var artwork: UIImage!
     
     
     // MARK: - Initializers
     
-    init(name: String, artist: String, artworkUrl: URL?) {
+    init(name: String, artist: String, artworkUrl: String) {
         self.name = name
         self.artist = artist
         self.artworkUrl = artworkUrl

@@ -12,7 +12,7 @@ class MSLastfmTableViewController: UITableViewController, MSNetworkable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Last.fm Table View Controller loaded.")
+        print("[...] Last.fm Table View Controller loaded.")
     }
 
     override func didReceiveMemoryWarning() {

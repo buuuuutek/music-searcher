@@ -23,7 +23,7 @@ class MSNetwork {
     // MARK: - Initializers
     
     init(url: String) {
-        print("Try to connection by URL (\(url))...")
+        print("[...] Try to connection by URL (\(url))...")
         self.url = url
     }
     

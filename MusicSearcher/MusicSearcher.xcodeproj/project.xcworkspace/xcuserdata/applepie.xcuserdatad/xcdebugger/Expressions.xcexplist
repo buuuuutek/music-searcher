@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MSMainViewController.searchBarSearchButtonClicked(UISearchBar) -&gt; ():MSViewController+UISearchBarDelegate.swift">
+         contextName = "MSMainViewController.searchInDifferentPlatforms(String) -&gt; ():MSViewController+UISearchBarDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "NotificationCenter.default">
+               value = "itunesTableView is MSNetworkable">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,7 +14,7 @@
          contextName = "MSItunesTableViewController.parseResponse(json : Data) -&gt; ():MSItunesTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "URL(string: item[&quot;artworkUrl100&quot;] as! String)">
+               value = "item[&quot;trackName&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,10 +30,10 @@
          contextName = "MSItunesTableViewController.searchOnServer(by : String) -&gt; ():MSItunesTableViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "MSMainViewController.searchInDifferentPlatforms(String) -&gt; ():MSViewController+UISearchBarDelegate.swift">
+         contextName = "MSMainViewController.searchBarSearchButtonClicked(UISearchBar) -&gt; ():MSViewController+UISearchBarDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "itunesTableView is MSNetworkable">
+               value = "NotificationCenter.default">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
