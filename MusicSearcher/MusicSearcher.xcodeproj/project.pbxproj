@@ -15,6 +15,7 @@
 		24D98E0B2236616900817C85 /* MusicSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D98E0A2236616900817C85 /* MusicSearcherTests.swift */; };
 		24D98E132236687800817C85 /* MSItunesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D98E122236687800817C85 /* MSItunesTests.swift */; };
 		24D98E15223669C100817C85 /* MSLastfmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D98E14223669C100817C85 /* MSLastfmTests.swift */; };
+		24D98E1D2236A31300817C85 /* MusicSearcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D98E1C2236A31300817C85 /* MusicSearcherUITests.swift */; };
 		24FE503E223154A200E14D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503D223154A200E14D0C /* AppDelegate.swift */; };
 		24FE5040223154A200E14D0C /* MSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FE503F223154A200E14D0C /* MSMainViewController.swift */; };
 		24FE5043223154A300E14D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FE5041223154A200E14D0C /* Main.storyboard */; };
@@ -38,6 +39,13 @@
 			remoteGlobalIDString = 24FE5039223154A100E14D0C;
 			remoteInfo = MusicSearcher;
 		};
+		24D98E1F2236A31300817C85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24FE5032223154A100E14D0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24FE5039223154A100E14D0C;
+			remoteInfo = MusicSearcher;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +59,9 @@
 		24D98E0C2236616900817C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24D98E122236687800817C85 /* MSItunesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSItunesTests.swift; sourceTree = "<group>"; };
 		24D98E14223669C100817C85 /* MSLastfmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSLastfmTests.swift; sourceTree = "<group>"; };
+		24D98E1A2236A31200817C85 /* MusicSearcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicSearcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24D98E1C2236A31300817C85 /* MusicSearcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearcherUITests.swift; sourceTree = "<group>"; };
+		24D98E1E2236A31300817C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24FE503A223154A200E14D0C /* MusicSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FE503D223154A200E14D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24FE503F223154A200E14D0C /* MSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSMainViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +81,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		24D98E052236616800817C85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24D98E172236A31200817C85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,11 +142,21 @@
 			path = MusicSearcherTests;
 			sourceTree = "<group>";
 		};
+		24D98E1B2236A31200817C85 /* MusicSearcherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24D98E1C2236A31300817C85 /* MusicSearcherUITests.swift */,
+				24D98E1E2236A31300817C85 /* Info.plist */,
+			);
+			path = MusicSearcherUITests;
+			sourceTree = "<group>";
+		};
 		24FE5031223154A100E14D0C = {
 			isa = PBXGroup;
 			children = (
 				24FE503C223154A200E14D0C /* MusicSearcher */,
 				24D98E092236616800817C85 /* MusicSearcherTests */,
+				24D98E1B2236A31200817C85 /* MusicSearcherUITests */,
 				24FE503B223154A200E14D0C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,6 +166,7 @@
 			children = (
 				24FE503A223154A200E14D0C /* MusicSearcher.app */,
 				24D98E082236616800817C85 /* MusicSearcherTests.xctest */,
+				24D98E1A2236A31200817C85 /* MusicSearcherUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +271,24 @@
 			productReference = 24D98E082236616800817C85 /* MusicSearcherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		24D98E192236A31200817C85 /* MusicSearcherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24D98E212236A31300817C85 /* Build configuration list for PBXNativeTarget "MusicSearcherUITests" */;
+			buildPhases = (
+				24D98E162236A31200817C85 /* Sources */,
+				24D98E172236A31200817C85 /* Frameworks */,
+				24D98E182236A31200817C85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24D98E202236A31300817C85 /* PBXTargetDependency */,
+			);
+			name = MusicSearcherUITests;
+			productName = MusicSearcherUITests;
+			productReference = 24D98E1A2236A31200817C85 /* MusicSearcherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		24FE5039223154A100E14D0C /* MusicSearcher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24FE504C223154A300E14D0C /* Build configuration list for PBXNativeTarget "MusicSearcher" */;
@@ -274,6 +321,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 24FE5039223154A100E14D0C;
 					};
+					24D98E192236A31200817C85 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 24FE5039223154A100E14D0C;
+					};
 					24FE5039223154A100E14D0C = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -295,12 +347,20 @@
 			targets = (
 				24FE5039223154A100E14D0C /* MusicSearcher */,
 				24D98E072236616800817C85 /* MusicSearcherTests */,
+				24D98E192236A31200817C85 /* MusicSearcherUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		24D98E062236616800817C85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24D98E182236A31200817C85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,6 +387,14 @@
 				24D98E15223669C100817C85 /* MSLastfmTests.swift in Sources */,
 				24D98E0B2236616900817C85 /* MusicSearcherTests.swift in Sources */,
 				24D98E132236687800817C85 /* MSItunesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24D98E162236A31200817C85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24D98E1D2236A31300817C85 /* MusicSearcherUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = 24FE5039223154A100E14D0C /* MusicSearcher */;
 			targetProxy = 24D98E0D2236616900817C85 /* PBXContainerItemProxy */;
+		};
+		24D98E202236A31300817C85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24FE5039223154A100E14D0C /* MusicSearcher */;
+			targetProxy = 24D98E1F2236A31300817C85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -405,6 +478,30 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicSearcher.app/MusicSearcher";
+			};
+			name = Release;
+		};
+		24D98E222236A31300817C85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MusicSearcherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VictorVolnukhin.MusicSearcherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MusicSearcher;
+			};
+			name = Debug;
+		};
+		24D98E232236A31300817C85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MusicSearcherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VictorVolnukhin.MusicSearcherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MusicSearcher;
 			};
 			name = Release;
 		};
@@ -531,6 +628,14 @@
 			buildConfigurations = (
 				24D98E0F2236616900817C85 /* Debug */,
 				24D98E102236616900817C85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		24D98E212236A31300817C85 /* Build configuration list for PBXNativeTarget "MusicSearcherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24D98E222236A31300817C85 /* Debug */,
+				24D98E232236A31300817C85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

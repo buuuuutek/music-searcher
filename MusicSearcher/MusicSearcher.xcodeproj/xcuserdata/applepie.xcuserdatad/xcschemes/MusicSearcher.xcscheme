@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MusicSearcher.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24D98E192236A31200817C85"
+               BuildableName = "MusicSearcherUITests.xctest"
+               BlueprintName = "MusicSearcherUITests"
+               ReferencedContainer = "container:MusicSearcher.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
