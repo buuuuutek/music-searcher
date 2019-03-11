@@ -11,9 +11,15 @@ import XCTest
 
 class MSLastfmTests: XCTestCase {
     
+    // MARK: - Constants
+    
+    let correctLastfmURL: String = "http://ws.audioscrobbler.com/2.0/?method=track.search&track=maroon&api_key=545e6ddf0eb4542e9362e0f5e70a4059&format=json"
+    
+    
     // MARK: - Fields
     
     var networkSession: URLSession!
+    var networkObject: MSNetworkable!
     
     
     
@@ -21,19 +27,17 @@ class MSLastfmTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         networkSession = URLSession.shared
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         networkSession = nil
         super.tearDown()
     }
     
     func testLastfmStatusResponse200() {
         // given
-        let url = URL(string: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=maroon&api_key=545e6ddf0eb4542e9362e0f5e70a4059&format=json")
+        let url = URL(string: correctLastfmURL)
         
         let promise = expectation(description: "Status code: 200")
         
@@ -57,4 +61,21 @@ class MSLastfmTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    func testCorrectCollectingLastfmURL() {
+        // given
+        networkObject = MSLastfmTableViewController()
+        
+        // when
+        let url = networkObject.collectPlatformURL(by: "maroon")
+        
+        // then
+        XCTAssert(url == correctLastfmURL)
+    }
 }
+
+
+
+
+
+

@@ -13,7 +13,7 @@ class MSNetwork {
     // MARK: - Fields
     
     private var url: String
-    private var vc: UIViewController
+    private var vc: UIViewController?
     
     
     // MARK: - Typealias
@@ -23,7 +23,7 @@ class MSNetwork {
     
     // MARK: - Initializers
     
-    init(url: String, vc: UIViewController) {
+    init(url: String, vc: UIViewController?) {
         // Debug log:
         // print("[...] Try to connection by URL (\(url))...")
         self.url = url
@@ -38,7 +38,7 @@ class MSNetwork {
             print("Could not make the correct URL.")
             MSNetworkAnalyzer.showOopsAlert(
                 with: "Application couldn't collect the correct URL. Try again or change your search request.",
-                in: self.vc)
+                in: self.vc!)
             return
         }
         

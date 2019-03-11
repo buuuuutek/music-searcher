@@ -11,29 +11,32 @@ import XCTest
 
 class MSItunesTests: XCTestCase {
     
+    // MARK: - Constants
+    
+    let correctItunesURL: String = "https://itunes.apple.com/search?term=maroon&entity=musicArtist&entity=musicTrack"
+    
+    
     // MARK: - Fields
     
     var networkSession: URLSession!
-    
+    var networkObject: MSNetworkable!
     
     
     // MARK: - Functions
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         networkSession = URLSession.shared
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         networkSession = nil
         super.tearDown()
     }
     
     func testItunesStatusResponse200() {
         // given
-        let url = URL(string: "https://itunes.apple.com/search?term=maroon&entity=musicTrack&entity=musicArtist")
+        let url = URL(string: correctItunesURL)
         
         let promise = expectation(description: "Status code: 200")
         
@@ -57,4 +60,21 @@ class MSItunesTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    func testCorrectCollectingItunesURL() {
+        // given
+        networkObject = MSItunesTableViewController()
+        
+        // when
+        let url = networkObject.collectPlatformURL(by: "maroon")
+        
+        // then
+        XCTAssert(url == correctItunesURL)
+    }
 }
+
+
+
+
+
+

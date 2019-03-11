@@ -101,7 +101,6 @@ extension MSItunesTableViewController: MSNetworkable {
     func collectPlatformURL(by searchText: String) -> String {
         let newString = searchText.replacingOccurrences(of: " ", with: "+")
         return (MSNetworkConstant.itunes.url + newString) +
-            (MSNetworkConstant.itunes.filter.artist + MSNetworkConstant.itunes.chars.and +
-            MSNetworkConstant.itunes.filter.track)
+            (MSNetworkConstant.itunes.filter.artist + MSNetworkConstant.itunes.filter.track)
     }
 }

@@ -17,10 +17,6 @@ class MSNetworkConstant {
             static let track: String = "&entity=musicTrack"
             static let artist: String = "&entity=musicArtist"
         }
-        
-        struct chars {
-            static let and: String = "&amp;"
-        }
     }
 
     struct lastfm {
